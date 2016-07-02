@@ -1,0 +1,52 @@
+.done-true {
+    text-decoration: line-through;
+    color: red;
+}
+
+div {
+    margin: 50px;
+}
+
+li {
+    padding: 5px;
+}
+
+span {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+span.glyphicon-plus {
+    font-size: 12px;
+}
+
+span.glyphicon-trash {
+    font-size: 12px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label.complete {
+    background-color: #5cb85c;
+    border-radius: 3px;
+    border: 1px solid #4cae4c;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    max-width: 100%;
+    padding: 1px 5px;
+}
+
+label.complete:hover {
+    background-color: #4cae4c;
+    cursor: pointer;
+}
+
+label.complete:active {
+    box-shadow: 0 0 5px #4cae4c;
+}

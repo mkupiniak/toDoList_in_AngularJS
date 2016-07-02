@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoList">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>3.6. To do list</title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <!-- MY STYLE -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <div ng-controller="todoController as todoCtrl">
+        <h3>Total todos: {{todoCtrl.getTotalTodos()}}</h3>
+        <ol>
+            <li ng-repeat="todo in todoCtrl.todos">
+                
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+                <label class="complete"><input type="checkbox" ng-model="todo.done">Complete</label>
+                <button type="button" class="btn btn-danger btn-xs" ng-click="todoCtrl.deleteCurrent(todo)">Delete</button>
+
+            </li>
+        </ol>
+        <form class="form-inline">
+            <!-- input text  -->
+            <input type="text" id="addInput" ng-model="todoText" placeholder="Type in a todo">
+            <!-- add button -->
+            <button type="button" id="addBtn" class="btn btn-default" ng-click="todoCtrl.addTodo(todoText)"><span class="glyphicon glyphicon-plus"></span>Add</button>
+        </form>
+        <br/>
+        <!-- remove all button -->
+        <button class="btn btn-danger btn-sm" ng-click="todoCtrl.clearCompleted()"><span class="glyphicon glyphicon-trash"></span>Remove all completed</button>
+    </div>
+    <!-- ANGULAR.JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!-- MY SCRIPTS -->
+    <script src="js/app.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>
